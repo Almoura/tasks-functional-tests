@@ -1,5 +1,7 @@
 package br.ce.almoura.tasks.functional;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
@@ -31,6 +33,9 @@ public class TasksTest {
 		WebDriver driver = acessarAplicacao();
 		//WebDriver driver = testeAmbiente();
 		
+		 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/uuuu");
+		 LocalDateTime now = LocalDateTime.now();
+		
 		try {
 			// 1. Clicar no botão “Add Todo”
 			driver.findElement(By.id("addTodo")).click();
@@ -40,7 +45,8 @@ public class TasksTest {
 			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 	
 			// 3. Escrever a Data
-			driver.findElement(By.id("dueDate")).sendKeys("13/01/2022");
+			//driver.findElement(By.id("dueDate")).sendKeys("16/01/2022");
+			driver.findElement(By.id("dueDate")).sendKeys(dtf.format(now));
 			
 			// 4. Clicar no botão “Salvar”
 			driver.findElement(By.id("saveButton")).click();
@@ -69,7 +75,7 @@ public class TasksTest {
 			//driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 	
 			// 3. Escrever a Data
-			driver.findElement(By.id("dueDate")).sendKeys("13/01/2022");
+			driver.findElement(By.id("dueDate")).sendKeys("14/01/2022");
 			
 			// 4. Clicar no botão “Salvar”
 			driver.findElement(By.id("saveButton")).click();
