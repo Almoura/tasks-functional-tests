@@ -28,11 +28,15 @@ public class TasksTest {
 		DesiredCapabilities cap = DesiredCapabilities.chrome(); // Possibilitará a criação de instância do Chrome quando o endereço do Hub for evocado. 
 		//WebDriver driver = new RemoteWebDriver(new URL("http://10.18.172.221:4445/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
 		//WebDriver driver = new RemoteWebDriver(new URL("http://172.24.0.2:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
-		WebDriver driver = new RemoteWebDriver(new URL("http://10.18.172.221:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
+		
+		//WebDriver driver = new RemoteWebDriver(new URL("http://10.18.172.221:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
+		WebDriver driver = new RemoteWebDriver(new URL("http://10.18.173.22:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
 		
 		
 		//driver.navigate().to("http://localhost:8001/tasks");
-		driver.navigate().to("http://10.18.172.221:8001/tasks");
+		//driver.navigate().to("http://10.18.172.221:8001/tasks");
+		
+		driver.navigate().to("10.18.173.22:4444/tasks");
 		 
 		
 		// Inibida temporariamente
@@ -78,6 +82,9 @@ public class TasksTest {
 	public void naoDeveSalvarTarefaSemDescricao() throws MalformedURLException {
 		WebDriver driver = acessarAplicacao();
 		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/uuuu");
+		LocalDateTime now = LocalDateTime.now();
+		
 		try {
 			// 1. Clicar no botão “Add Todo”
 			driver.findElement(By.id("addTodo")).click();
@@ -87,7 +94,9 @@ public class TasksTest {
 			//driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
 	
 			// 3. Escrever a Data
-			driver.findElement(By.id("dueDate")).sendKeys("14/01/2022");
+			//driver.findElement(By.id("dueDate")).sendKeys("26/01/2022");
+			// 26/01/2022
+			driver.findElement(By.id("dueDate")).sendKeys(dtf.format(now));
 			
 			// 4. Clicar no botão “Salvar”
 			driver.findElement(By.id("saveButton")).click();
