@@ -30,13 +30,14 @@ public class TasksTest {
 		//WebDriver driver = new RemoteWebDriver(new URL("http://172.24.0.2:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
 		
 		//WebDriver driver = new RemoteWebDriver(new URL("http://10.18.172.221:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
-		WebDriver driver = new RemoteWebDriver(new URL("http://10.18.173.22:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
+		//WebDriver driver = new RemoteWebDriver(new URL("http://10.18.173.22:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
 		
+		WebDriver driver = new RemoteWebDriver(new URL("http://10.18.173.247:4444/wd/hub"), cap); // RemoteWebDriver(EndHubComQueConectar); // Ver esse end. no log do Grid
 		
 		//driver.navigate().to("http://localhost:8001/tasks");
 		//driver.navigate().to("http://10.18.172.221:8001/tasks");
 		
-		driver.navigate().to("10.18.173.22:4444/tasks");
+		driver.navigate().to("10.18.173.247:4444/tasks");
 		 
 		
 		// Inibida temporariamente

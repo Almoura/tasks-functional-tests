@@ -1,0 +1,124 @@
+D:\Documents\TRT18\Metas Setor de Qualidade\Curso de Integração Contínua - Udemy\devops\tasks-funcional-test>mvn test
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ----------------< br.ce.almoura.tasks:functional-test >-----------------
+[INFO] Building functional-test 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ functional-test ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ functional-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ functional-test ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO]
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ functional-test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO]
+[INFO] --- maven-surefire-plugin:2.20:test (default-test) @ functional-test ---
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running br.ce.almoura.tasks.functional.TasksTest
+jan 26, 2022 1:59:38 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMAÇÕES: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+jan 26, 2022 1:59:38 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMAÇÕES: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+jan 26, 2022 1:59:38 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMAÇÕES: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+jan 26, 2022 1:59:38 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+INFORMAÇÕES: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 22.341 s <<< FAILURE! - in br.ce.almoura.tasks.functional.TasksTest
+[ERROR] naoDeveSalvarTarefaSemData(br.ce.almoura.tasks.functional.TasksTest)  Time elapsed: 22.341 s  <<< ERROR!
+org.openqa.selenium.remote.UnreachableBrowserException:
+Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-NRJ1GGO', ip: '10.18.173.247', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_162'
+Driver info: driver.version: RemoteWebDriver
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaSemData(TasksTest.java:117)
+Caused by: java.net.ConnectException: Failed to connect to /10.18.173.22:4444
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaSemData(TasksTest.java:117)
+Caused by: java.net.ConnectException: Connection timed out: connect
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaSemData(TasksTest.java:117)
+
+[ERROR] naoDeveSalvarTarefaComDataPassada(br.ce.almoura.tasks.functional.TasksTest)  Time elapsed: 22.341 s  <<< ERROR!
+org.openqa.selenium.remote.UnreachableBrowserException:
+Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-NRJ1GGO', ip: '10.18.173.247', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_162'
+Driver info: driver.version: RemoteWebDriver
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaComDataPassada(TasksTest.java:146)
+Caused by: java.net.ConnectException: Failed to connect to /10.18.173.22:4444
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaComDataPassada(TasksTest.java:146)
+Caused by: java.net.ConnectException: Connection timed out: connect
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaComDataPassada(TasksTest.java:146)
+
+[ERROR] deveSalvarTarefaComSucesso(br.ce.almoura.tasks.functional.TasksTest)  Time elapsed: 22.341 s  <<< ERROR!
+org.openqa.selenium.remote.UnreachableBrowserException:
+Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-NRJ1GGO', ip: '10.18.173.247', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_162'
+Driver info: driver.version: RemoteWebDriver
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.deveSalvarTarefaComSucesso(TasksTest.java:49)
+Caused by: java.net.ConnectException: Failed to connect to /10.18.173.22:4444
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.deveSalvarTarefaComSucesso(TasksTest.java:49)
+Caused by: java.net.ConnectException: Connection timed out: connect
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.deveSalvarTarefaComSucesso(TasksTest.java:49)
+
+[ERROR] naoDeveSalvarTarefaSemDescricao(br.ce.almoura.tasks.functional.TasksTest)  Time elapsed: 22.341 s  <<< ERROR!
+org.openqa.selenium.remote.UnreachableBrowserException:
+Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-NRJ1GGO', ip: '10.18.173.247', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_162'
+Driver info: driver.version: RemoteWebDriver
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaSemDescricao(TasksTest.java:83)
+Caused by: java.net.ConnectException: Failed to connect to /10.18.173.22:4444
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaSemDescricao(TasksTest.java:83)
+Caused by: java.net.ConnectException: Connection timed out: connect
+        at br.ce.almoura.tasks.functional.TasksTest.acessarAplicacao(TasksTest.java:33)
+        at br.ce.almoura.tasks.functional.TasksTest.naoDeveSalvarTarefaSemDescricao(TasksTest.java:83)
+
+[INFO]
+[INFO] Results:
+[INFO]
+[ERROR] Errors:
+[ERROR]   TasksTest.deveSalvarTarefaComSucesso:49->acessarAplicacao:33 » UnreachableBrowser
+[ERROR]   TasksTest.naoDeveSalvarTarefaComDataPassada:146->acessarAplicacao:33 » UnreachableBrowser
+[ERROR]   TasksTest.naoDeveSalvarTarefaSemData:117->acessarAplicacao:33 » UnreachableBrowser
+[ERROR]   TasksTest.naoDeveSalvarTarefaSemDescricao:83->acessarAplicacao:33 » UnreachableBrowser
+[INFO]
+[ERROR] Tests run: 4, Failures: 0, Errors: 4, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  25.566 s
+[INFO] Finished at: 2022-01-26T14:00:01-02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.20:test (default-test) on project functional-test: There are test failures.
+[ERROR]
+[ERROR] Please refer to D:\Documents\TRT18\Metas Setor de Qualidade\Curso de Integração Contínua - Udemy\devops\tasks-funcional-test\target\surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR]
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR]
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
