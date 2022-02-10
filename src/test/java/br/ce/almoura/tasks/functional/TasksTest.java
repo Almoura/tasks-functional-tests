@@ -140,8 +140,43 @@ public class TasksTest {
 			driver.quit();
 		}
 	}
-		
 	
+	
+	@Test
+	public void deveRemoverTarefaComSucesso() throws MalformedURLException {
+		WebDriver driver = acessarAplicacao();
+		
+		try {
+			// Inserir tarefa
+			driver.findElement(By.id("addTodo")).click();
+			driver.findElement(By.id("task")).sendKeys("Teste via Selenium");
+			driver.findElement(By.id("dueDate")).sendKeys("10/02/2022");
+			driver.findElement(By.id("saveButton")).click();
+			
+			// Validar mensagem de sucesso
+			String message = driver.findElement(By.id("message")).getText();
+			//Assert.assertEquals(expected, actual);
+			Assert.assertEquals("Success!", message);
+			
+			// Remover a Tarefa
+			/*
+			 Na aplicação, clicar com o botão direito sobre o botão "Remover"
+			 Como a classe a que se refere o botão é uma classe composta, que não permite referenciar os botões apenas, deve-se
+			 clicar nesse classe com o botão direito e selecionar Copy > XPath
+			 Com o botão do mouse posicionado sobre o nome da classe, selecionar Edit Atributo.
+			 Posicionar novamente sobre o nome da classe, clicar com o botão direito e selecionar Copiar ("btn btn-outline-danger btn-sm")
+			 Posicionar novamente sobre o nome da classe e pressionar Ctrl + F
+			 No campo de busca do XPath, escrever: //a[@class='btn btn-outline-danger btn-sm']
+			*/
+			driver.findElement(By.xpath("//a[@class='btn btn-outline-danger btn-sm')")).click();
+			message = driver.findElement(By.id("message")).getText();
+			Assert.assertEquals("Success!", message);
+		} finally {
+			// 6. Fechar o browser
+			driver.quit();
+		}
+	}
+		
 	
 	@Test
 	public void naoDeveSalvarTarefaComDataPassada() throws MalformedURLException {
